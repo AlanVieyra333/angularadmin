@@ -4,10 +4,11 @@
 /**************************************/
 
 .headerwrapper {
-    background-color: #1f6b9e;
+    background-color: #218f80;
     min-height: 60px;
     width: 100%;
     z-index: 1000;
+    position: fixed;
     &:after {
         clear: both;
         display: block;
@@ -26,4 +27,18 @@ a.btn.btn-social-icon.btn-github {
     color: #fff;
     border: 1px solid #fff;
     margin: 10px;
+}
+
+.title {
+    color: #fff;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.logo {
+    background-color: #fff;
+    padding: initial;
+    height: 100px;
+    padding: 10px 25px 10px 25px;
+    margin-right: 20px;
 }
