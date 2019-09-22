@@ -16,6 +16,10 @@ export const routes: Routes = [{
   },
   children: [
     {
+      path: '**',
+      component: PageNotFoundComponent
+    },
+    {
       path: 'home',
       loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
       data: {
@@ -23,7 +27,7 @@ export const routes: Routes = [{
       },
     },
     {
-      path: 'urriculum-vitae',
+      path: 'curriculum-vitae',
       loadChildren: () => import('./forms/forms.module').then(m => m.FormsModule),
       data: {
         title: 'Curriculum Vitae'
@@ -43,12 +47,9 @@ export const routes: Routes = [{
   children: [
     {
       path: '',
-      loadChildren: () => import('./tables/tables.module').then(m => m.TablesModule)
+      loadChildren: () => import('./courses/courses.module').then(m => m.CoursesModule)
     }
   ]
-}, {
-  path: '**',
-  component: PageNotFoundComponent
 }];
 
 @NgModule({
