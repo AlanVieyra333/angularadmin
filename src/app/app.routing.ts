@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BlankTemplateComponent } from './template/blank-template.component';
 import { LeftNavTemplateComponent } from './template/left-nav-template.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
