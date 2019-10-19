@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BlankTemplateComponent } from './template/blank-template.component';
 import { LeftNavTemplateComponent } from './template/left-nav-template.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
@@ -12,43 +11,41 @@ export const routes: Routes = [{
   path: '',
   component: LeftNavTemplateComponent,
   data: {
-    title: 'Alan Fernando Rincón Vieyra'
+    title: 'Cinvestav | Alan Fernando Rincón Vieyra'
   },
   children: [
     {
-      path: '**',
-      component: PageNotFoundComponent
-    },
-    {
       path: 'home',
-      loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
+      loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
       data: {
         title: 'Inicio'
       },
     },
     {
-      path: 'curriculum-vitae',
-      loadChildren: () => import('./forms/forms.module').then(m => m.FormsModule),
+      path: 'cursos',
+      loadChildren: () => import('./courses/courses.module').then(m => m.CoursesModule),
+      data: {
+        title: 'Cursos'
+      },
+    },
+    {
+      path: 'cv',
+      loadChildren: () => import('./curriculum-vitae/curriculum-vitae.module').then(m => m.CurriculumVitaeModule),
       data: {
         title: 'Curriculum Vitae'
       },
     },
     {
       path: 'contact',
-      loadChildren: () => import('./ui-elements/ui-elements.module').then(m => m.UiElementsModule),
+      loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule),
       data: {
         title: 'Contacto'
       },
-    }
-  ]
-}, {
-  path: 'cursos',
-  component: LeftNavTemplateComponent,
-  children: [
+    },
     {
-      path: '',
-      loadChildren: () => import('./courses/courses.module').then(m => m.CoursesModule)
-    }
+      path: '**',
+      component: PageNotFoundComponent
+    },
   ]
 }];
 
