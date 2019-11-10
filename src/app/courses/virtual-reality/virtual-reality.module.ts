@@ -10,6 +10,14 @@ const routes: Routes = [
     component: VirtualRealityComponent,
   },
   {
+    path: 'deteccion-colisiones-investigacion',
+    loadChildren: () => import('./collision-detection-investigation/collision-detection-investigation.module')
+      .then(m => m.CollisionDetectionInvestigationModule),
+    data: {
+      title: 'Detección de Colisiones - Investigación'
+    },
+  },
+  {
     path: 'rehilete',
     loadChildren: () => import('./rehilete/rehilete.module').then(m => m.RehileteModule),
     data: {

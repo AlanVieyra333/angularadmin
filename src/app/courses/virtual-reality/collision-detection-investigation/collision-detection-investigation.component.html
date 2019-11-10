@@ -1,0 +1,166 @@
+<div class="container-fluid">
+  <div class="row row-stat">
+
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading panel-heading-no-divider">
+              <p>Detección de Colisiones - Investigación</p>
+              <p></p>
+
+              <span class="panel-subtitle">
+                La detección de colisiones consiste en detectar si 2 cuerpos han colisionado, con el objetivo
+                de simular el comportamiento que tendrían en el mundo real, dada su masa, velocidad, gravedad, etc.
+                <br>
+                Comprobar la existencia de colisiones de manera exacta entre cuerpos con formas complejas tiene un alto
+                coste computacionall,
+                además de que el nùmero de comprobaciones crece con forme crece el nùmero de objetos en el mundo.
+              </span>
+              <br>
+
+              <span class="panel-subtitle">
+                Cada objeto debe tener una forma de colisión, la cual puede ser la malla en si misma,
+                sin embargo, no suele ser muy óptimo para el rendimiento.
+                <br>
+                En cambio, generalmente se usan formas mucho más simples como cajas, esferas o cápsulas.
+                <br><br>
+                A continuación se muestran algunos ejemplos de formas de colisión.
+              </span>
+              <br>
+
+              <img src="assets/images/04_collision_shapes.png" />
+
+              <span class="panel-subtitle">
+                De izquierda a derecha: esfera, cubo, casco convexo de la malla, malla original.
+                <br>
+                Las esferas son menos precisas que la malla completa, pero son mucho más rápidas de procesar.
+              </span>
+              <br>
+
+              <span class="panel-subtitle">
+                Para procesar los potenciales contactos no se utiliza la forma real de los objetos, sino formas
+                simplificadas que abarcan todo el objeto (<b>Bounding Volume</b>) que permiten comprobar de forma
+                eficiente si
+                colisionan.
+                <br>
+                El Bounding Volume debe abarcar todo el objeto y se pueden utilizar las formas las siguientes formas:
+              </span>
+              <br>
+
+              <img src="assets/images/04_bvs.png" />
+              <br>
+
+              <p>Bullet Physics</p>
+
+              <span class="panel-subtitle">
+                Existen bibliotecas especializadas en detección de colisiones como <b>Bullet Physics SDK</b> que permite
+                la detección de colisiones
+                en tiempo real y simulación de física múltiple para realidad virtual, juegos, efectos visuales,
+                robótica, aprendizaje automático, etc.
+                <br>
+                Esta biblioteca es de còdigo abierto y proporciona algoritmos y estructuras de aceleración para
+                consultas de puntos más cercanos
+                (distancia y penetración), así como pruebas de barrido de rayos y convexos.
+                <br><br>
+
+              </span>
+
+              <span class="panel-subtitle">
+                Bullet Phtsics maneja tres tipos de cuerpos rígidos.
+                <ul>
+                  <li><b>Cuerpos dinámicos.</b> Cuerpos que presentan movimiento. Por ejemplo la
+                    fuerza de gravedad.
+                  </li>
+                  <li><b>Cuerpos estáticos.</b> Cuerpos que permanecen en una misma posicón, por lo
+                    tanto no poseen movimiento. Por ejemplo superficies como paredes, piso, etc.</li>
+                  <li><b>Cuerpos cinemáticos.</b> Cuerpos que no son afectados por la gravedad
+                    y pueden ser animados por el usuario.</li>
+                </ul>
+              </span>
+
+              <span class="panel-subtitle">
+                Las principales estructuras de datos son:
+                <ul>
+                  <li><b>btCollisionObject.</b> Objeto que tiene una transformación del mundo y una forma de colisión.</li>
+                  <li><b>btCollisionShape.</b> Describe la forma de colisión de un objeto de colisión, como caja, esfera, casco
+                    convexo o malla triangular. Se puede compartir una sola forma de colisión entre varios objetos de
+                    colisión.</li>
+                  <li><b>btGhostObject.</b> Objecto especial de btCollisionObject, útil para consultas rápidas de localización
+                    de colisiones.</li>
+                  <li><b>btCollisionWorld.</b> Almacena los objetos btCollisionObjects y proporciona una interfaz para realizar
+                    consultas.</li>
+                </ul>
+              </span>
+
+              <span class="panel-subtitle">
+                La detección de colisión de fase ancha proporciona una estructura de aceleración para rechazar
+                rápidamente pares de objetos en función de la superposición del cuadro delimitador alineado con el eje
+                (AABB). Varias estructuras de aceleración de fase ancha diferentes están disponibles.
+
+                <ul>
+                  <li><b>btDbvtBroadphase.</b> Utiliza una jerarquía de volumen delimitador dinámico rápido basado en el árbol AABB.</li>
+                  <li><b>btAxisSweep3 and bt32BitAxisSweep3.</b> Implementan un barrido 3d incremental y poda.</li>
+                  <li><b>btCudaBroadphase.</b> Implementa una malla uniforme rápida usando hardware de gráficos GPU.</li>
+                </ul>
+              </span>
+
+              <br>
+              <span class="panel-subtitle">
+                Bibliografía:
+              </span>
+              <span class="panel-subtitle">
+                <ul>
+                  <li>
+                    <a href="https://www.youtube.com/watch?v=Ntf0y_hu7Io">
+                      https://www.youtube.com/watch?v=Ntf0y_hu7Io
+                    </a>
+                  </li>
+
+                  <li>
+                    "VIDEOJUEGOS 2 - Detección de colisiones"", Moodle2016-17.ua.es, 2015.
+                    [Online]. Available:
+                    <a target="_blank"
+                      href="https://moodle2016-17.ua.es/moodle/pluginfile.php/8873/mod_resource/content/3/vii-07-colisiones.pdf">
+                      https://moodle2016-17.ua.es/moodle/pluginfile.php/8873/mod_resource/content/3/vii-07-colisiones.pdf
+                    </a>
+                    . [Accessed: 10- Nov- 2019].
+                  </li>
+
+                  <li>
+                    E. Coumans, "Bullet 2.80 Physics SDK Manual", Cs.kent.edu, 2012.
+                    [Online]. Available:
+                    <a target="_blank" href="http://www.cs.kent.edu/~ruttan/GameEngines/lectures/Bullet_User_Manual">
+                      http://www.cs.kent.edu/~ruttan/GameEngines/lectures/Bullet_User_Manual
+                    </a>
+                    . [Accessed: 10- Nov- 2019].
+                  </li>
+
+                  <li>
+                    "Picking with a physics library", Opengl-tutorial.org.
+                    [Online]. Available:
+                    <a target="_blank"
+                      href="http://www.opengl-tutorial.org/miscellaneous/clicking-on-objects/picking-with-a-physics-library">
+                      http://www.opengl-tutorial.org/miscellaneous/clicking-on-objects/picking-with-a-physics-library
+                    </a>
+                    . [Accessed: 10- Nov- 2019].
+                  </li>
+
+                  <li>
+                    "Bullet Collision Detection & Physics Library: Bullet Documentation", Pybullet.org.
+                    [Online]. Available:
+                    <a href="https://pybullet.org/Bullet/BulletFull/index.html">
+                      https://pybullet.org/Bullet/BulletFull/index.html
+                    </a>
+                    . [Accessed: 10- Nov- 2019].
+                  </li>
+                </ul>
+              </span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
