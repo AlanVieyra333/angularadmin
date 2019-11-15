@@ -10,26 +10,26 @@ export class CoursesComponent implements OnInit {
   courses = [
     {
       "title": "Programación Avanzada",
-      "teacher": "Dr. Amilcar Meneses",
-      "teacherUrl": "",
+      "teacher": "Dr. Amilcar Meneses Viveros",
+      "teacherUrl": "https://www.cs.cinvestav.mx/Investigadores/Eamilcar",
       "date": "Agosto, 2019",
       "redirect": "",
     }, {
       "title": "Diseño y Análisis de Algoritmos",
-      "teacher": "Dra. Dolores Lara",
-      "teacherUrl": "",
+      "teacher": "Dra. Dolores Lara Cuevas",
+      "teacherUrl": "https://www.cs.cinvestav.mx/Investigadores/ELara",
       "date": "Agosto, 2019",
       "redirect": "",
     }, {
       "title": "Tópicos selectos: Cómputo de alto desempeño I",
-      "teacher": "Dres. José Rodríguez y Dr. Amilcar Meneses",
-      "teacherUrl": "",
+      "teacher": "Dres. José Guadalupe Rodríguez García y Dr. Amilcar Meneses Viveros",
+      "teacherUrl": "https://www.cs.cinvestav.mx/Investigadores/Ejrodriguez",
       "date": "Agosto, 2019",
       "redirect": "",
     }, {
       "title": "Realidad Virtual",
       "teacher": "Dr. Luis Gerardo de la Fraga",
-      "teacherUrl": "http://delta.cs.cinvestav.mx/~fraga/",
+      "teacherUrl": "https://www.cs.cinvestav.mx/Investigadores/Efraga",
       "date": "Agosto, 2019",
       "redirect": "/cursos/realidad-virtual",
     }

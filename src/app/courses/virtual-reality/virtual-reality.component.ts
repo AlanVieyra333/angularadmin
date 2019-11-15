@@ -9,7 +9,11 @@ import { Router } from '@angular/router';
 export class VirtualRealityComponent implements OnInit {
   tasks = [
     {
-      "title": "Mundo Virtual",
+      "title": "Mundo Virtual - Navegación",
+      "date": "Octubre 23, 2019",
+      "redirect": "/cursos/realidad-virtual/mundo-virtual-navegacion",
+    }, {
+      "title": "Mundo Virtual - Bosquejo",
       "date": "Octubre 7, 2019",
       "redirect": "/cursos/realidad-virtual/mundo-virtual",
     }, {

@@ -11,7 +11,7 @@ export const routes: Routes = [{
   path: '',
   component: LeftNavTemplateComponent,
   data: {
-    title: 'Cinvestav | Alan Fernando Rincón Vieyra'
+    title: 'Alan Fernando Rincón Vieyra | Departamento de Computación | CINVESTAV'
   },
   children: [
     {

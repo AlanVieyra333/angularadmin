@@ -8,16 +8,21 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: VirtualRealityComponent,
-  },
-  {
-    path: 'rehilete',
-    loadChildren: () => import('./rehilete/rehilete.module').then(m => m.RehileteModule),
+  }, {
+    path: 'mundo-virtual-navegacion',
+    loadChildren: () => import('./virtual-world-navigation/virtual-world-navigation.module').then(m => m.VirtualWorldNavigationModule),
     data: {
       title: 'Tarea'
     },
   }, {
     path: 'mundo-virtual',
-    loadChildren: () => import('./virtual-world/virtual-world.module').then(m => m.VirtualWorldModule),
+    loadChildren: () => import('./virtual-world-sketch/virtual-world-sketch.module').then(m => m.VirtualWorldSketchModule),
+    data: {
+      title: 'Tarea'
+    },
+  }, {
+    path: 'rehilete',
+    loadChildren: () => import('./rehilete/rehilete.module').then(m => m.RehileteModule),
     data: {
       title: 'Tarea'
     },

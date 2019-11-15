@@ -1,24 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { VirtualWorldComponent } from './virtual-world.component';
+import { VirtualWorldSketchComponent } from './virtual-world-sketch.component';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: VirtualWorldComponent,
+    component: VirtualWorldSketchComponent,
     data: {
-      title: 'Mundo Virtual'
+      title: 'Mundo Virtual - Bosquejo'
     },
   }
 ];
 
 @NgModule({
-  declarations: [VirtualWorldComponent],
+  declarations: [VirtualWorldSketchComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
   ]
 })
-export class VirtualWorldModule { }
+export class VirtualWorldSketchModule { }
