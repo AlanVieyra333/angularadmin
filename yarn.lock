@@ -5170,10 +5170,10 @@ primeicons@^2.0.0:
   resolved "https://registry.yarnpkg.com/primeicons/-/primeicons-2.0.0.tgz#ec3e5a8d4d04a09309225a5a57deb911e08dc0d3"
   integrity sha512-GJTCeMSQU8UU1GqbsaDrg/IH+b/vSinJQl52NVpdJ7sShYLZA8Eq6jLF48Ye3N/dQloGrE07i7XsZvxQ9pNbqg==
 
-primeng@^9.0.0-rc.2:
-  version "9.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/primeng/-/primeng-9.0.0-rc.2.tgz#343e9ad842f47439fadc281d85d19ca0c2611b96"
-  integrity sha512-k4omQrUe+Ul/Uk9xk4VWJE8f4kUMugP0T/i+q3Zqc7J/op920UNdovE5ZcquVtUIjYNqsh7VfWzYaNFogjysIg==
+primeng@^8.0.0-rc.2:
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/primeng/-/primeng-8.1.1.tgz#3b1f95f503f1bd70834caea775dbfd2e4e322b5c"
+  integrity sha512-8dP8A3qkmOvDTe97kCeFvoCk6oPNDdgMTdT4UBzhC4ua5wM7i7pjYXuKzAXm3oEFf+iSEB6WqzzfSqyZdbEA+w==
 
 process-nextick-args@~2.0.0:
   version "2.0.1"

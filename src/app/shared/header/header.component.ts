@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
-import { isNullOrUndefined } from 'util';
 import { filter } from 'rxjs/operators';
-import { TestBed } from '@angular/core/testing';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +9,7 @@ import { TestBed } from '@angular/core/testing';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  private items: MenuItem[];
+  items: MenuItem[];
   home: MenuItem;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
