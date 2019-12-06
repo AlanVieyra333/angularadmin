@@ -8,9 +8,6 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: VirtualWorldNavigationComponent,
-    data: {
-      title: 'Mundo Virtual - Navegación'
-    },
   }
 ];
 

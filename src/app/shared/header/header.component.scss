@@ -42,3 +42,11 @@ a.btn.btn-social-icon.btn-github {
     padding: 5px 15px 5px 15px;
     margin-right: 20px;
 }
+
+::ng-deep .ui-breadcrumb {
+    margin-top: 60px;
+    position: fixed;
+    margin-left: 220px;
+    z-index: 1;
+    width: 100%;
+}

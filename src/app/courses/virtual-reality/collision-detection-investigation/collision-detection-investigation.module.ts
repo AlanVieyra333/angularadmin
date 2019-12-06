@@ -8,9 +8,6 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: CollisionDetectionInvestigationComponent,
-    data: {
-      title: 'Detección de Colisiones - Investigación'
-    },
   }
 ];
 

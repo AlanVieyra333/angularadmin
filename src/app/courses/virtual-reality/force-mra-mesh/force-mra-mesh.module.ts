@@ -8,9 +8,6 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: ForceMraMeshComponent,
-    data: {
-      title: 'Fuerza MRA - Malla 3D'
-    },
   }
 ];
 

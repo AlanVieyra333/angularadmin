@@ -18,7 +18,7 @@ export const routes: Routes = [{
       path: 'home',
       loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
       data: {
-        title: 'Inicio'
+        title: 'Inicio',
       },
     },
     {
@@ -32,14 +32,14 @@ export const routes: Routes = [{
       path: 'cv',
       loadChildren: () => import('./curriculum-vitae/curriculum-vitae.module').then(m => m.CurriculumVitaeModule),
       data: {
-        title: 'Curriculum Vitae'
+        title: 'Curriculum Vitae',
       },
     },
     {
       path: 'contact',
       loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule),
       data: {
-        title: 'Contacto'
+        title: 'Contacto',
       },
     },
     {

@@ -8,9 +8,6 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: ForceMraControlComponent,
-    data: {
-      title: 'Fuerza MRA y Control - Simulación de tocar'
-    },
   }
 ];
 
