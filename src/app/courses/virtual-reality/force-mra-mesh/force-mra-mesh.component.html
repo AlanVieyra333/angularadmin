@@ -1,0 +1,141 @@
+<div class="container-fluid">
+  <div class="row row-stat">
+
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading panel-heading-no-divider">
+              <p>Fuerza MRA - Malla 3D</p>
+              <p></p>
+              <span class="panel-subtitle">
+                La malla 3D consiste en una matriz de nodos conectados visualmente con lineas, sobre el plano "xz",
+                teniendo como vector arriba el eje "Y".
+              </span>
+              <p></p>
+
+              <img src="assets/images/05_malla_7x7.jpg" class="img-center" />
+
+              <br>
+              <span class="panel-subtitle">
+                La resolución de la malla 3D soporta 3 diferentes dimenciones de la matriz: 7x7, 13x13 y 25x25 nodos.
+              </span>
+              <p></p>
+
+              <span class="panel-subtitle">
+                Cada nodo tiene el comportamiento de un sistema masa-resorte-amortiguador.
+              </span>
+              <p></p>
+
+              <span class="panel-subtitle" style="text-align: center; font-weight: bolder;">
+                X_t+1 = K_1(X_t) + K_2(X_t-1) + K_3
+              </span>
+              <span class="panel-subtitle" style="font-weight: bolder;">
+                K_1 = 2 - (b/m)d_t - (k/m)d_t^2
+              </span>
+              <span class="panel-subtitle" style="font-weight: bolder;">
+                K_2 = (b/m)d_t - 1
+              </span>
+              <span class="panel-subtitle" style="font-weight: bolder;">
+                K_3 = (F/m)d_t^2
+              </span>
+              <p></p>
+
+              <span class="panel-subtitle">
+                Donde:
+              </span>
+              <span class="panel-subtitle">
+                X_t+1: Siguiente Valor de 'x'. (m)
+              </span>
+              <span class="panel-subtitle">
+                X_t: Valor actural de 'x'. (m)
+              </span>
+              <span class="panel-subtitle">
+                X_t-1: Valor anterior de 'x'. (m)
+              </span>
+              <span class="panel-subtitle">
+                k: Constante del resorte. (Kg/s^2)
+              </span>
+              <span class="panel-subtitle">
+                m: Masa del objeto. (Kg)
+              </span>
+              <span class="panel-subtitle">
+                b: Constante del amortiguador. (Kg/s)
+              </span>
+              <span class="panel-subtitle">
+                F: Fuerza aplicada al objeto. (N)
+              </span>
+              <span class="panel-subtitle">
+                d_t: Diferencial de tiempo. (s)
+              </span>
+
+              <p></p>
+
+              <span class="panel-subtitle">
+                Para esta simulaciòn se establecieron los siguientes valores constantes:
+              </span>
+              <span class="panel-subtitle">
+                k: Constante del resorte. (Kg/s^2)
+              </span>
+              <span class="panel-subtitle">
+                m: Masa del objeto. (Kg)
+              </span>
+              <span class="panel-subtitle">
+                b: Constante del amortiguador. (Kg/s)
+              </span>
+              <span class="panel-subtitle">
+                F: Fuerza aplicada al objeto. (N)
+              </span>
+              <span class="panel-subtitle">
+                d_t: Diferencial de tiempo. (s)
+              </span>
+              
+              <span class="panel-subtitle">
+                En el plano 3D es la posición: x = 20.0, y = 2.0, z = -5.0
+              </span>
+              <span class="panel-subtitle">
+                La cámara mira inicialmente hacia 135° del eje x hacia el eje z.
+              </span>
+              <p></p>
+              <span class="panel-subtitle">
+                Las teclas para navegar son:
+                <ul>
+                  <li><b>Flecha Izquierda:</b> Mover el ojo de la cámara hacia la izquierda.</li>
+                  <li><b>Flecha Derecha:</b> Mover el ojo de la cámara hacia la derecha.</li>
+                  <li><b>Flecha Arriba:</b> Mover centro de la cámara hacia arriba.</li>
+                  <li><b>Flecha Abajo:</b> Mover centro de la cámara hacia abajo.</li>
+                  <li><b>Enter:</b> Mover centro de la cámara hacia enfrente.</li>
+                  <li><b>Delete:</b> Mover centro de la cámara hacia atrás.</li>
+                </ul>
+              </span>
+              <p></p>
+
+              <br>
+
+              <span class="panel-subtitle">
+                Como resultado la navegación sobre el mundo virtual se muestra en el siguiente video.
+              </span>
+
+              <p align="center">
+                <iframe src="https://drive.google.com/file/d/112PmLywYAz8t0nDw41IMZc5IDdH8E75J/preview" width="640"
+                  height="480"></iframe>
+              </p>
+              <br>
+
+              <span class="panel-subtitle">
+                Código fuente: <a
+                  href="https://github.com/AlanVieyra333/realidad-virtual.cinvestav/tree/master/Mundo%20Virtual"
+                  target="_blank">https://github.com/AlanVieyra333/realidad-virtual.cinvestav/tree/master/Mundo%20Virtual</a>
+              </span>
+
+              <span class="panel-subtitle">
+                Descargar <a href="assets/downloads/Fuerza_MRA_Malla_3D.zip">Fuerza_MRA_Malla_3D.zip</a>
+              </span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

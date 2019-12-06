@@ -9,11 +9,25 @@ const routes: Routes = [
     pathMatch: 'full',
     component: VirtualRealityComponent,
   }, {
+    path: 'fuerza-mra-control',
+    loadChildren: () => import('./force-mra-control/force-mra-control.module')
+      .then(m => m.ForceMraControlModule),
+    data: {
+      title: 'Tarea'
+    },
+  }, {
+    path: 'fuerza-mra-3d',
+    loadChildren: () => import('./force-mra-mesh/force-mra-mesh.module')
+      .then(m => m.ForceMraMeshModule),
+    data: {
+      title: 'Tarea'
+    },
+  }, {
     path: 'deteccion-colisiones-investigacion',
     loadChildren: () => import('./collision-detection-investigation/collision-detection-investigation.module')
       .then(m => m.CollisionDetectionInvestigationModule),
     data: {
-      title: 'Detección de Colisiones - Investigación'
+      title: 'Tarea'
     },
   }, {
     path: 'mundo-virtual-navegacion',
