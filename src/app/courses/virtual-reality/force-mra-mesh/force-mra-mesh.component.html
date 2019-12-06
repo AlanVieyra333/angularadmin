@@ -45,28 +45,28 @@
                 Donde:
               </span>
               <span class="panel-subtitle">
-                X_t+1: Siguiente Valor de 'x'. (m)
+                <b>X_t+1:</b> Siguiente Valor de 'x'. (m)
               </span>
               <span class="panel-subtitle">
-                X_t: Valor actural de 'x'. (m)
+                <b>X_t:</b> Valor actural de 'x'. (m)
               </span>
               <span class="panel-subtitle">
-                X_t-1: Valor anterior de 'x'. (m)
+                <b>X_t-1:</b> Valor anterior de 'x'. (m)
               </span>
               <span class="panel-subtitle">
-                k: Constante del resorte. (Kg/s^2)
+                <b>k:</b> Constante del resorte. (Kg/s^2)
               </span>
               <span class="panel-subtitle">
-                m: Masa del objeto. (Kg)
+                <b>m:</b> Masa del objeto. (Kg)
               </span>
               <span class="panel-subtitle">
-                b: Constante del amortiguador. (Kg/s)
+                <b>b:</b> Constante del amortiguador. (Kg/s)
               </span>
               <span class="panel-subtitle">
-                F: Fuerza aplicada al objeto. (N)
+                <b>F:</b> Fuerza aplicada al objeto. (N)
               </span>
               <span class="panel-subtitle">
-                d_t: Diferencial de tiempo. (s)
+                <b>d_t:</b> Diferencial de tiempo. (s)
               </span>
 
               <p></p>
@@ -75,57 +75,59 @@
                 Para esta simulaciòn se establecieron los siguientes valores constantes:
               </span>
               <span class="panel-subtitle">
-                k: Constante del resorte. (Kg/s^2)
+                <b>k:</b> 0.2 (Kg/s^2)
               </span>
               <span class="panel-subtitle">
-                m: Masa del objeto. (Kg)
+                <b>m:</b> 0.01 (Kg)
               </span>
               <span class="panel-subtitle">
-                b: Constante del amortiguador. (Kg/s)
+                <b>b:</b> 0.02667 (Kg/s)
               </span>
               <span class="panel-subtitle">
-                F: Fuerza aplicada al objeto. (N)
+                <b>d_t:</b> 1.0/30.0 (s)
               </span>
-              <span class="panel-subtitle">
-                d_t: Diferencial de tiempo. (s)
-              </span>
-              
-              <span class="panel-subtitle">
-                En el plano 3D es la posición: x = 20.0, y = 2.0, z = -5.0
-              </span>
-              <span class="panel-subtitle">
-                La cámara mira inicialmente hacia 135° del eje x hacia el eje z.
-              </span>
+
               <p></p>
+
               <span class="panel-subtitle">
-                Las teclas para navegar son:
-                <ul>
-                  <li><b>Flecha Izquierda:</b> Mover el ojo de la cámara hacia la izquierda.</li>
-                  <li><b>Flecha Derecha:</b> Mover el ojo de la cámara hacia la derecha.</li>
-                  <li><b>Flecha Arriba:</b> Mover centro de la cámara hacia arriba.</li>
-                  <li><b>Flecha Abajo:</b> Mover centro de la cámara hacia abajo.</li>
-                  <li><b>Enter:</b> Mover centro de la cámara hacia enfrente.</li>
-                  <li><b>Delete:</b> Mover centro de la cámara hacia atrás.</li>
-                </ul>
+                Los ángulos que especifican la direcciòn de la fuerza son los siguente:
               </span>
-              <p></p>
+
+              <img src="assets/images/05_vector_angulos.jpg" class="img-center" />
+
+              <span class="panel-subtitle">
+                <b>alpha:</b> Àngulo sobre el plano "xz". (grados)
+              </span>
+              <span class="panel-subtitle">
+                <b>beta:</b> Àngulo sobre el plano "xy". (grados)
+              </span>
 
               <br>
 
               <span class="panel-subtitle">
-                Como resultado la navegación sobre el mundo virtual se muestra en el siguiente video.
+                La especificaciòn del punto donde se aplica la fuerza se hace a travès de un mouse 3D:
+                <ul>
+                  <li><b>Traslaciòn X:</b> Mover el nodo principal hacia la izquierda y derecha.</li>
+                  <li><b>Traslaciòn Y:</b> Mover el nodo principal hacia arriba y abajo.</li>
+                </ul>
               </span>
+              
+              <p></p>
+
+              <span class="panel-subtitle">
+                El resultado de la simulaciòn de una fuerza aplicada a un sistema mra sobre una malla 3D, se muestra a continuaciòn:
+              </span>
+              <p></p>
 
               <p align="center">
                 <iframe src="https://drive.google.com/file/d/112PmLywYAz8t0nDw41IMZc5IDdH8E75J/preview" width="640"
                   height="480"></iframe>
               </p>
-              <br>
 
               <span class="panel-subtitle">
                 Código fuente: <a
-                  href="https://github.com/AlanVieyra333/realidad-virtual.cinvestav/tree/master/Mundo%20Virtual"
-                  target="_blank">https://github.com/AlanVieyra333/realidad-virtual.cinvestav/tree/master/Mundo%20Virtual</a>
+                  href="https://github.com/AlanVieyra333/realidad-virtual.cinvestav/tree/master/Malla_MRA"
+                  target="_blank">https://github.com/AlanVieyra333/realidad-virtual.cinvestav/tree/master/Malla_MRA</a>
               </span>
 
               <span class="panel-subtitle">
