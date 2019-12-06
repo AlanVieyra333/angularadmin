@@ -13,12 +13,14 @@
                                 <table class="table tasks">
                                     <thead>
                                         <tr>
+                                            <th>No.</th>
                                             <th>Tarea</th>
                                             <th>Fecha</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let task of tasks" (click)="redirect(task.redirect)">
+                                        <tr *ngFor="let task of tasks, let i = index" (click)="redirect(task.redirect)">
+                                            <td>{{tasks.length - i}}</td>
                                             <td>{{task.title}}</td>
                                             <td>{{task.date}}</td>
                                         </tr>
