@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 export class VirtualRealityComponent implements OnInit {
   tasks = [
     {
-      "title": "Fuerza MRA con Control - Simulación de tocar la malla",
-      "date": "Diciembre 9, 2019",
+      "title": "Fuerza MRA - Simulación de tocar la malla",
+      "date": "Diciembre 11, 2019",
       "redirect": "/cursos/realidad-virtual/fuerza-mra-control",
     }, {
       "title": "Fuerza MRA - Malla 3D",
