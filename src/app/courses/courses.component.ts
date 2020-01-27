@@ -9,6 +9,12 @@ import { Router } from '@angular/router';
 export class CoursesComponent implements OnInit {
   courses = [
     {
+      "title": "Aprendizaje Automático",
+      "teacher": "Dr. Luis Gerardo de la Fraga",
+      "teacherUrl": "https://www.cs.cinvestav.mx/Investigadores/Efraga",
+      "date": "Enero, 2020",
+      "redirect": "/cursos/aprendizaje-automatico",
+    },{
       "title": "Programación Avanzada",
       "teacher": "Dr. Amilcar Meneses Viveros",
       "teacherUrl": "https://www.cs.cinvestav.mx/Investigadores/Eamilcar",
