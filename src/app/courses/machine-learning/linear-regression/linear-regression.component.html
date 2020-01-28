@@ -1,121 +1,114 @@
-<div class="container-fluid">
-    <div class="row row-stat">
-  
-      <div class="col-sm-12">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="panel panel-default">
-              <div class="panel-heading panel-heading-no-divider">
-                <p>Regresión Lineal</p>
-                <p></p>
-                <span class="panel-subtitle">
-                  Para lograr crear la simulación de tocar la malla, se puede utilizar un control PD que suaviza el
-                  movimiento
-                  del objeto del sistema MRA, o bien, se puede usar un sistema MRA críticamente amortiguado, ambos
-                  aplicados
-                  unicamente durante el periodo de tiempo que se está tocando.
-                </span>
-                <span class="panel-subtitle">
-                  Para ésta simulaciòn se utilizó la segunda opción (sistema MRA críticamente amortiguado).
-                </span>
-                <p></p>
-  
-                <img src="assets/images/06_mra-criticamente-amortiguada.png" class="img-center" />
-  
-                <br>
-  
-                <span class="panel-subtitle">
-                  Donde cada gráfica representa:
-                </span>
-                <span class="panel-subtitle">
-                  <b>Línea morada:</b> Sistema MRA subamortiguado, con un T = 3.0s.
-                  <ul>
-                    <li>Se le aplica una fuerza en el tiempo 0.0, y se estabiliza en el tiempo 3.0</li>
-                  </ul>
-                </span>
-                <span class="panel-subtitle">
-                  <b>Línea verde:</b> Sistema MRA subamortiguado, con un T = 3.0s.
-                  <ul>
-                    <li>Se le aplica una fuerza en el tiempo 0.0, y se estabiliza en el tiempo 3.0</li>
-                    <li>Se le quita la fuerza en el tiempo 5.0, y se estabiliza en el tiempo 8.0</li>
-                  </ul>
-                </span>
-                <span class="panel-subtitle">
-                  <b>Línea azul:</b> Sistema MRA críticamente amortiguado, con un T = 1.0s.
-                  <ul>
-                    <li>Se le aplica una fuerza en el tiempo 0.0, y se estabiliza en el tiempo 1.0</li>
-                    <li>Se le quita la fuerza en el tiempo 5.0 (ahora con un T = 3.0s para volver a un sistema MRA
-                      subamortiguado), y se estabiliza en el tiempo 8.0. (Logrando un comportamiento igual al de la línea
-                      verde)</li>
-                  </ul>
-                </span>
-                <span class="panel-subtitle">
-                  <b>Línea amarilla:</b> Sistema MRA críticamente amortiguado, con un T = 1.0s.
-                  <ul>
-                    <li>Se le aplica una fuerza en el tiempo 0.0, y se estabiliza en el tiempo 1.0</li>
-                    <li>Se modifica la fuerza (reduciéndola a la mitad) en el tiempo 2.0, y se estabiliza en el tiempo 3.0
-                    </li>
-                    <li>Se le quita la fuerza en el tiempo 5.0 (ahora con un T = 3.0s para volver a un sistema MRA
-                      subamortiguado), y se estabiliza en el tiempo 8.0.</li>
-                  </ul>
-                </span>
-  
-                <p></p>
-  
-                <span class="panel-subtitle">
-                  Para esta simulaciòn se establecieron los siguientes valores constantes:
-                </span>
-                <span class="panel-subtitle">
-                  <b>k:</b> 0.2 (Kg/s^2)
-                </span>
-                <span class="panel-subtitle">
-                  <b>m:</b> 0.01 (Kg)
-                </span>
-                <span class="panel-subtitle">
-                  <b>b:</b> 0.02667 (Kg/s)
-                </span>
-                <span class="panel-subtitle">
-                  <b>d_t:</b> 1.0/30.0 (s)
-                </span>
-  
-                <p></p>
-  
-                <span class="panel-subtitle">
-                  La especificaciòn de la fuerza aplicada se hace a travès de un mouse 3D:
-                  <ul>
-                    <li><b>Traslaciòn Z:</b> Aplica una fuerza proporcional al movimiento del mouse 3D: TZ*0.2, TZ &isin;
-                      [-1.0, 1.0]</li>
-                  </ul>
-                </span>
-  
-                <p></p>
-  
-                <!--
-                <span class="panel-subtitle">
-                  El resultado de la simulaciòn de tocar la malla 3D, se muestra a continuaciòn:
-                </span>
-                <p></p>
-  
-                <p align="center">
-                  <iframe src="https://drive.google.com/file/d/112PmLywYAz8t0nDw41IMZc5IDdH8E75J/preview" width="640"
-                    height="480"></iframe>
-                </p>
-                -->
-  
-                <span class="panel-subtitle">
-                  Código fuente: <a
-                    href="https://github.com/AlanVieyra333/realidad-virtual.cinvestav/tree/master/Malla_MRA"
-                    target="_blank">https://github.com/AlanVieyra333/realidad-virtual.cinvestav/tree/master/Malla_MRA</a>
-                </span>
-  
-                <span class="panel-subtitle">
-                  Descargar <a href="assets/downloads/Fuerza_MRA_Tocar_Malla_3D.zip">Fuerza_MRA_Tocar_Malla_3D.zip</a>
-                </span>
-  
-              </div>
-            </div>
-          </div>
+<section>
+  <h1>Regresión Lineal</h1>
+  <p>
+    La regresión lineal o ajuste lineal es un modelo matemático usado para aproximar la relación de
+    dependencia entre una variable dependiente Y y las variables independientes Xi. La
+    aplicación de este método implica un supuesto de linealidad.
+  </p>
+
+  <h2>Modelo</h2>
+  <p>Para un ajuste lineal con una variable independiente, el modelo usado es el siguiente:</p>
+  <div class="equation">
+    <ng-katex [equation]="eq_regLin1"></ng-katex>
+  </div>
+  <p>
+    Se desea ajustar un modelo de acuerdo con los valores devueltos por la siguiente función:
+  </p>
+  <div class="equation">
+    <ng-katex [equation]="eq_modelo1"></ng-katex>
+  </div>
+  <div class="equation">
+    <ng-katex [equation]="eq_modelo2"></ng-katex>
+  </div>
+  <p>
+    Para ajustar el modelo se usaron 10 datos X, Y. Y para probar el modelo se usaron otros 10 datos.
+  </p>
+
+  <h2>Ejemplos</h2>
+
+  <p-tabView>
+    <p-tabPanel [header]="example.title" *ngFor="let example of examples; let i = index" [selected]="i == 0">
+      <img [src]="example.image" class="img-center" />
+      <div class="p-grid">
+        <div class="p-col-6">
+          <p>
+            <i class="pi pi-circle-on" style="font-size: 1.5em; color: rgb(29, 120, 176);"></i>Datos de entrenamiento.
+          </p>
+          <p-table [value]="example.train.dataset">
+            <ng-template pTemplate="header">
+              <tr>
+                <th>X</th>
+                <th>Y</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-dataset>
+              <tr>
+                <td>{{dataset.x}}</td>
+                <td>{{dataset.y}}</td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+
+        <div class="p-col-6">
+          <p>
+            <i class="pi pi-circle-on" style="font-size: 1.5em; color: orange;"></i>Datos de prueba.
+          </p>
+          <p-table [value]="example.test.dataset">
+            <ng-template pTemplate="header">
+              <tr>
+                <th>X</th>
+                <th>Y</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-dataset>
+              <tr>
+                <td>{{dataset.x}}</td>
+                <td>{{dataset.y}}</td>
+              </tr>
+            </ng-template>
+          </p-table>
         </div>
       </div>
+    </p-tabPanel>
+  </p-tabView>
+
+  <br>
+
+  <h3>
+    Tabla de coeficientes, ECM y R2.
+  </h3>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <p-table [value]="examples">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>No. de polinomio</th>
+            <th>Coeficientes</th>
+            <th>ECM entrenamiento</th>
+            <th><i class="pi pi-circle-on" style="font-size: 1.5em; color: rgb(29, 120, 176);"></i>R2 entrenamiento</th>
+            <th>ECM prueba</th>
+            <th><i class="pi pi-circle-on" style="font-size: 1.5em; color: orange;"></i>R2 prueba</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-example let-i="rowIndex">
+          <tr>
+            <td>{{i + 1}}</td>
+            <td>{{example.coef[0]}}, {{example.coef[1]}}</td>
+            <td>{{example.train.mean_squared_error}}</td>
+            <td>{{example.train.r2}}</td>
+            <td>{{example.test.mean_squared_error}}</td>
+            <td>{{example.test.r2}}</td>
+          </tr>
+        </ng-template>
+      </p-table>
     </div>
   </div>
+  <img src="assets/images/ml/01_coef_r2.png" class="img-center" />
+
+  <p>Código fuente:
+    <a href="https://github.com/AlanVieyra333/machine-learning/blob/master/tarea_1/regresion_lineal.py" target="_blank">
+      https://github.com/AlanVieyra333/machine-learning/blob/master/tarea_1/regresion_lineal.py</a></p>
+  <p>Descargar: <a href="assets/downloads/regresion_lineal.zip">regresion_lineal.zip</a></p>
+
+</section>
