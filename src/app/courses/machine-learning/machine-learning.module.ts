@@ -9,6 +9,13 @@ const routes: Routes = [
     pathMatch: 'full',
     component: MachineLearningComponent,
   }, {
+    path: 'regresion-logistica',
+    loadChildren: () => import('./logistic-regression/logistic-regression.module')
+      .then(m => m.LogisticRegressionModule),
+    data: {
+      title: 'Regresión Logística'
+    },
+  }, {
     path: 'regresion-lineal',
     loadChildren: () => import('./linear-regression/linear-regression.module')
       .then(m => m.LinearRegressionModule),

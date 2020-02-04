@@ -9,6 +9,10 @@ import { Router } from '@angular/router';
 export class MachineLearningComponent implements OnInit {
   tasks = [
     {
+      "title": "Regresión Logística",
+      "date": "Febrero 4, 2020",
+      "redirect": "/cursos/aprendizaje-automatico/regresion-logistica",
+    }, {
       "title": "Regresión Lineal",
       "date": "Enero 28, 2020",
       "redirect": "/cursos/aprendizaje-automatico/regresion-lineal",

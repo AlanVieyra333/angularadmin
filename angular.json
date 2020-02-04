@@ -127,6 +127,14 @@
     },
     "@schematics/angular:directive": {
       "prefix": "app"
+    },
+    "@schematics/angular": {
+      "component": {
+        "spec": false
+      },
+      "service": {
+        "spec": false
+      }
     }
   }
 }

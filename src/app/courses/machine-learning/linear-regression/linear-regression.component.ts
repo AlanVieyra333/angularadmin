@@ -24,7 +24,7 @@ interface RLTest {
 @Component({
   selector: 'app-linear-regression',
   templateUrl: './linear-regression.component.html',
-  styleUrls: ['./linear-regression.component.scss']
+  styles: ['']
 })
 export class LinearRegressionComponent implements OnInit {
   eq_regLin1 = 'y = p_0 + p_1 x';
@@ -37,7 +37,7 @@ export class LinearRegressionComponent implements OnInit {
   ngOnInit() {
     this.examples.push({
       title: 'Polinomio 1',
-      image: 'assets/images/ml/01_lin_reg_1.png',
+      image: 'assets/images/ml/01_linear_regression/01_lin_reg_1.png',
       train: {
         dataset: [{
           x: 0,
@@ -113,7 +113,7 @@ export class LinearRegressionComponent implements OnInit {
         -0.19716618],
     }, {
       title: 'Polinomio 2',
-      image: 'assets/images/ml/01_lin_reg_2.png',
+      image: 'assets/images/ml/01_linear_regression/01_lin_reg_2.png',
       train: {
         dataset: [{
           x: 0,
@@ -189,7 +189,7 @@ export class LinearRegressionComponent implements OnInit {
         -0.16647828],
     }, {
       title: 'Polinomio 3',
-      image: 'assets/images/ml/01_lin_reg_3.png',
+      image: 'assets/images/ml/01_linear_regression/01_lin_reg_3.png',
       train: {
         dataset: [{
           x: 0,
@@ -265,7 +265,7 @@ export class LinearRegressionComponent implements OnInit {
         -0.19541277],
     }, {
       title: 'Polinomio 4',
-      image: 'assets/images/ml/01_lin_reg_4.png',
+      image: 'assets/images/ml/01_linear_regression/01_lin_reg_4.png',
       train: {
         dataset: [{
           x: 0,
