@@ -9,6 +9,13 @@ const routes: Routes = [
     pathMatch: 'full',
     component: MachineLearningComponent,
   }, {
+    path: 'pca',
+    loadChildren: () => import('./pca/pca.module')
+      .then(m => m.PcaModule),
+    data: {
+      title: 'Descomposición en Componentes Principales'
+    },
+  }, {
     path: 'regresion-logistica',
     loadChildren: () => import('./logistic-regression/logistic-regression.module')
       .then(m => m.LogisticRegressionModule),

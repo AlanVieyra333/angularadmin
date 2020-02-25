@@ -1,0 +1,243 @@
+<section>
+    <h1>Descomposición en Componentes Principales</h1>
+    <div class="detail">Escrito por: Alan F. Rincón Vieyra &nbsp;&nbsp;&nbsp;&nbsp;
+        <i class="pi pi-calendar"></i>Publicado: 25 Febrero 2020
+    </div>
+
+    <p>
+        La descomposición en componentes principales se usa para reducir el número de dimensiones (características)
+        necesarias para lograr separar linealmente las clases.
+    </p>
+
+    <p>
+        Los componentes se ordenan por la cantidad de varianza original que describen (energía), por lo que la técnica
+        es útil para reducir la dimensionalidad de un conjunto de datos.
+    </p>
+
+    <p>
+        El ACP construye una transformación lineal que escoge un nuevo sistema de coordenadas para el conjunto original
+        de datos en el cual la varianza de mayor tamaño del conjunto de datos es capturada en el primer eje (llamado el
+        Primer Componente Principal), la segunda varianza más grande es el segundo eje, y así sucesivamente.
+    </p>
+
+    <h2>Ejemplo</h2>
+    <p>Se desea reducir la dimensionalidad de los datos de la flor Iris, y comprobar que exista una separación lineal
+        entre las clases, al ir reduciondo las dimensiones, de 4 dimensiones originales hasta 2 dimensiones.</p>
+
+    <p-tabView>
+        <p-tabPanel header="Reducción de dimensiones con 2 clases" selected="true">
+            <p>Las 4 dimensiones utilizadas son las mediciones del <b>largo y ancho de los sépalos</b> y el <b>largo y
+                    ancho de los pétalos</b>.<br></p>
+            <p>Los componentes principales calculados con OpenCV son los siguientes:</p>
+            <br>
+            <table>
+                <tr>
+                    <td>0.3186078</td>
+                    <td>-0.17354684</td>
+                    <td>0.87099373</td>
+                    <td>0.33127105</td>
+                </tr>
+                <tr>
+                    <td>-0.6599251</td>
+                    <td>-0.7462354</td>
+                    <td>0.08493413</td>
+                    <td>0.02044679</td>
+                </tr>
+                <tr>
+                    <td>0.6740148</td>
+                    <td>-0.634344</td>
+                    <td>-0.27332866</td>
+                    <td>-0.2619221</td>
+                </tr>
+                <tr>
+                    <td>0.09323015</td>
+                    <td>-0.10306479</td>
+                    <td>-0.39930886</td>
+                    <td>0.90622205</td>
+                </tr>
+            </table>
+
+            <br>
+            <p>Energía ACP:</p>
+            <br>
+            <table>
+                <tr>
+                    <th>Eigenvalor 1</th>
+                    <th>Eigenvalor 2</th>
+                    <th>Eigenvalor 3</th>
+                    <th>Eigenvalor 4</th>
+                    <th>Energía total</th>
+                </tr>
+                <tr>
+                    <td>243.55626</td>
+                    <td>21.455921</td>
+                    <td>4.3603764</td>
+                    <td>0.8484698</td>
+                    <td>270.22102</td>
+                </tr>
+            </table>
+
+            <br>
+            <p>Por lo que al reducir la dimensionalidad, tenemos que la energía se pierde de la siguiente forma:</p>
+            <br>
+            <table>
+                <tr>
+                    <th>4 dimensiones</th>
+                    <th>3 dimensiones</th>
+                    <th>2 dimensiones</th>
+                    <th>1 dimensión</th>
+                </tr>
+                <tr>
+                    <td>270.22102</td>
+                    <td>269.37255</td>
+                    <td>265.01217</td>
+                    <td>243.55626</td>
+                </tr>
+                <tr>
+                    <td>100%</td>
+                    <td>99.68%</td>
+                    <td>98.07%</td>
+                    <td>90.13%</td>
+                </tr>
+            </table>
+
+            <figure>
+                <img src="assets/images/ml/03_pca/pca_2cl_3ca.png" class="img-center" />
+                <figcaption>Fig.1 - Separación lineal de 2 clases con 3 características.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="assets/images/ml/03_pca/pca_2cl_2ca.png" class="img-center" alt="Sigmoide" />
+                <figcaption>Fig.2 - Separación lineal de 2 clases con 2 características.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="assets/images/ml/03_pca/pca_2cl_1ca.png" class="img-center" alt="Sigmoide" />
+                <figcaption>Fig.2 - Separación lineal de 2 clases con 1 característica.</figcaption>
+            </figure>
+        </p-tabPanel>
+        <p-tabPanel header="Reducción de dimensiones con 3 clases">
+            <p>Las 4 dimensiones utilizadas son las mediciones del <b>largo y ancho de los sépalos</b> y el <b>largo y
+                    ancho de los pétalos</b>.<br></p>
+            <p>Los componentes principales calculados con OpenCV son los siguientes:</p>
+            <br>
+            <table>
+                <tr>
+                    <td>0.3186078</td>
+                    <td>-0.17354684</td>
+                    <td>0.87099373</td>
+                    <td>0.33127105</td>
+                </tr>
+                <tr>
+                    <td>-0.6599251</td>
+                    <td>-0.7462354</td>
+                    <td>0.08493413</td>
+                    <td>0.02044679</td>
+                </tr>
+                <tr>
+                    <td>0.6740148</td>
+                    <td>-0.634344</td>
+                    <td>-0.27332866</td>
+                    <td>-0.2619221</td>
+                </tr>
+                <tr>
+                    <td>0.09323015</td>
+                    <td>-0.10306479</td>
+                    <td>-0.39930886</td>
+                    <td>0.90622205</td>
+                </tr>
+            </table>
+
+            <br>
+            <p>Energía ACP:</p>
+            <br>
+            <table>
+                <tr>
+                    <th>Eigenvalor 1</th>
+                    <th>Eigenvalor 2</th>
+                    <th>Eigenvalor 3</th>
+                    <th>Eigenvalor 4</th>
+                    <th>Energía total</th>
+                </tr>
+                <tr>
+                    <td>568.541</td>
+                    <td>32.297157</td>
+                    <td>11.124194</td>
+                    <td>2.9679341</td>
+                    <td>614.93028</td>
+                </tr>
+            </table>
+
+            <br>
+            <p>Por lo que al reducir la dimensionalidad, tenemos que la energía se pierde de la siguiente forma:</p>
+            <br>
+            <table>
+                <tr>
+                    <th>4 dimensiones</th>
+                    <th>3 dimensiones</th>
+                    <th>2 dimensiones</th>
+                    <th>1 dimensión</th>
+                </tr>
+                <tr>
+                    <td>614.93028</td>
+                    <td>611.96234</td>
+                    <td>600.83815</td>
+                    <td>568.541</td>
+                </tr>
+                <tr>
+                    <td>100%</td>
+                    <td>99.51%</td>
+                    <td>97.70%</td>
+                    <td>92.45%</td>
+                </tr>
+            </table>
+
+            <figure>
+                <img src="assets/images/ml/03_pca/pca_3cl_3ca.png" class="img-center" />
+                <figcaption>Fig.4 - Separación lineal de 3 clases con 3 características.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="assets/images/ml/03_pca/pca_3cl_2ca.png" class="img-center" alt="Sigmoide" />
+                <figcaption>Fig.5 - Separación lineal de 3 clases con 2 características.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="assets/images/ml/03_pca/pca_3cl_1ca.png" class="img-center" alt="Sigmoide" />
+                <figcaption>Fig.6 - Separación lineal de 3 clases con 1 característica.</figcaption>
+            </figure>
+        </p-tabPanel>
+    </p-tabView>
+
+    <br>
+    <p>Como se puede observar en las gráficas anteriores, se puede reducir la dimensionalidad de un conjunto de datos,
+        siempre y cuando la energìa (relacion de varianza) que se tenga sea lo suficientemente alta como para separar
+        linealmente los datos. Preferentemente el porcentaje de energía con relación a la energía con todas las
+        dimensiones sea mayor al 80%.</p>
+
+    <p>Por otra parte, se observa que con 3 clases no se logra separar linealmente los datos, ni siquiera usando todas
+        las dimensiones. Para intentar mejorar la descomposición, podemos optar por agregar una característica extra,
+        que en realidad es el propio valor de "Y", es decir, el resultado de la clasificación.</p>
+
+    <figure>
+        <img src="assets/images/ml/03_pca/pca_3cl_5ca_2d.png" class="img-center" alt="Sigmoide" />
+        <figcaption>Fig.7 - Separación lineal de 3 clases con 5 características reducidas a 2.</figcaption>
+    </figure>
+    <figure>
+        <img src="assets/images/ml/03_pca/pca_3cl_5ca_1d.png" class="img-center" alt="Sigmoide" />
+        <figcaption>Fig.8 - Separación lineal de 3 clases con 5 características reducidas a 1.</figcaption>
+    </figure>
+
+
+    <br>
+    <p>Descargar: <a href="assets/downloads/acp.zip">acp.zip</a></p>
+    <p>Código fuente:
+        <a href="https://github.com/AlanVieyra333/machine-learning/tree/master/tarea_3" target="_blank">
+            https://github.com/AlanVieyra333/machine-learning/tree/master/tarea_3</a></p>
+
+    <br>
+    <h2>Referencias</h2>
+    <a href="https://www.learnopencv.com/principal-component-analysis/"
+        target="_blank">https://www.learnopencv.com/principal-component-analysis/</a>
+
+</section>
