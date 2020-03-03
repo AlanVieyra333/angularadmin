@@ -9,6 +9,13 @@ const routes: Routes = [
     pathMatch: 'full',
     component: MachineLearningComponent,
   }, {
+    path: 'svm',
+    loadChildren: () => import('./svm/svm.module')
+      .then(m => m.SvmModule),
+    data: {
+      title: 'Máquinas de vectores de soporte'
+    },
+  }, {
     path: 'pca',
     loadChildren: () => import('./pca/pca.module')
       .then(m => m.PcaModule),
