@@ -9,6 +9,13 @@ const routes: Routes = [
     pathMatch: 'full',
     component: MachineLearningComponent,
   }, {
+    path: 'validacion-cruzada',
+    loadChildren: () => import('./cross-validation/cross-validation.module')
+      .then(m => m.CrossValidationModule),
+    data: {
+      title: 'Validacón Cruzada'
+    },
+  }, {
     path: 'svm',
     loadChildren: () => import('./svm/svm.module')
       .then(m => m.SvmModule),

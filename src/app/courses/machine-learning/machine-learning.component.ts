@@ -9,6 +9,10 @@ import { Router } from '@angular/router';
 export class MachineLearningComponent implements OnInit {
   tasks = [
     {
+      "title": "Validación Cruzada",
+      "date": "Marzo 10, 2020",
+      "redirect": "/cursos/aprendizaje-automatico/validacion-cruzada",
+    }, {
       "title": "Máquinas de vectores de soporte",
       "date": "Marzo 3, 2020",
       "redirect": "/cursos/aprendizaje-automatico/svm",
