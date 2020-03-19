@@ -25,7 +25,7 @@
         entre las clases, al ir reduciondo las dimensiones, de 4 dimensiones originales hasta 2 dimensiones.</p>
 
     <p-tabView>
-        <p-tabPanel header="Reducción de dimensiones con 2 clases" selected="true">
+        <!-- <p-tabPanel header="Reducción de dimensiones con 2 clases" selected="true">
             <p>Las 4 dimensiones utilizadas son las mediciones del <b>largo y ancho de los sépalos</b> y el <b>largo y
                     ancho de los pétalos</b>.<br></p>
             <p>Los componentes principales calculados con OpenCV son los siguientes:</p>
@@ -115,8 +115,8 @@
                 <img src="assets/images/ml/03_pca/pca_2cl_1ca.png" class="img-center" alt="Sigmoide" />
                 <figcaption>Fig.2 - Separación lineal de 2 clases con 1 característica.</figcaption>
             </figure>
-        </p-tabPanel>
-        <p-tabPanel header="Reducción de dimensiones con 3 clases">
+        </p-tabPanel> -->
+        <p-tabPanel header="Reducción de dimensiones con 3 clases" selected="true">
             <p>Las 4 dimensiones utilizadas son las mediciones del <b>largo y ancho de los sépalos</b> y el <b>largo y
                     ancho de los pétalos</b>.<br></p>
             <p>Los componentes principales calculados con OpenCV son los siguientes:</p>
@@ -192,20 +192,24 @@
                 </tr>
             </table>
 
+            <br>
+            <p>Al reducir de 4 dimensiones a 3 y a 2 dimensiones, la energía se mantiene por arriba del 80%, por lo que
+                es factible reducir las dimensiones, quedando de la siguiente manera.</p>
+
             <figure>
                 <img src="assets/images/ml/03_pca/pca_3cl_3ca.png" class="img-center" />
-                <figcaption>Fig.4 - Separación lineal de 3 clases con 3 características.</figcaption>
+                <figcaption>Fig.1 - Separación lineal de 3 clases con 3 dimensiones (PC).</figcaption>
             </figure>
 
             <figure>
                 <img src="assets/images/ml/03_pca/pca_3cl_2ca.png" class="img-center" alt="Sigmoide" />
-                <figcaption>Fig.5 - Separación lineal de 3 clases con 2 características.</figcaption>
+                <figcaption>Fig.2 - Separación lineal de 3 clases con 2 dimensiones (PC).</figcaption>
             </figure>
 
-            <figure>
+            <!-- <figure>
                 <img src="assets/images/ml/03_pca/pca_3cl_1ca.png" class="img-center" alt="Sigmoide" />
-                <figcaption>Fig.6 - Separación lineal de 3 clases con 1 característica.</figcaption>
-            </figure>
+                <figcaption>Fig.3 - Separación lineal de 3 clases con 1 característica.</figcaption>
+            </figure> -->
         </p-tabPanel>
     </p-tabView>
 
@@ -215,7 +219,7 @@
         linealmente los datos. Preferentemente el porcentaje de energía con relación a la energía con todas las
         dimensiones sea mayor al 80%.</p>
 
-    <p>Por otra parte, se observa que con 3 clases no se logra separar linealmente los datos, ni siquiera usando todas
+    <!-- <p>Por otra parte, se observa que con 3 clases no se logra separar linealmente los datos, ni siquiera usando todas
         las dimensiones. Para intentar mejorar la descomposición, podemos optar por agregar una característica extra,
         que en realidad es el propio valor de "Y", es decir, el resultado de la clasificación.</p>
 
@@ -226,7 +230,7 @@
     <figure>
         <img src="assets/images/ml/03_pca/pca_3cl_5ca_1d.png" class="img-center" alt="Sigmoide" />
         <figcaption>Fig.8 - Separación lineal de 3 clases con 5 características reducidas a 1.</figcaption>
-    </figure>
+    </figure> -->
 
 
     <br>
