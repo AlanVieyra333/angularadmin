@@ -1,5 +1,5 @@
 <section>
-  <h1>Regresión Lineal</h1>
+  <h1>Regresión Polinomial</h1>
   <div class="detail">Escrito por: Alan F. Rincón Vieyra &nbsp;&nbsp;&nbsp;&nbsp;
     <i class="pi pi-calendar"></i>Publicado: 28 Enero 2020
   </div>
@@ -16,7 +16,7 @@
     <ng-katex [equation]="eq_regLin1"></ng-katex>
   </div>
   <p>
-    Se desea ajustar un modelo de acuerdo con los valores devueltos por la siguiente función:
+    Se desea ajustar un modelo usando la siguiente función con ruido Gaussiano:
   </p>
   <div class="equation">
     <ng-katex [equation]="eq_modelo1"></ng-katex>
@@ -87,7 +87,7 @@
       <p-table [value]="examples">
         <ng-template pTemplate="header">
           <tr>
-            <th>No. de polinomio</th>
+            <th>No. de coeficientes</th>
             <th>Coeficientes</th>
             <th>ECM entrenamiento</th>
             <th><i class="pi pi-circle-on" style="font-size: 1.5em; color: rgb(29, 120, 176);"></i>R2 entrenamiento</th>
@@ -97,8 +97,10 @@
         </ng-template>
         <ng-template pTemplate="body" let-example let-i="rowIndex">
           <tr>
-            <td>{{i + 1}}</td>
-            <td>{{example.coef[0]}}, {{example.coef[1]}}</td>
+            <td>{{i + 2}}</td>
+            <td>
+              <div *ngFor="let coef of example.coef;let idx=index">W{{idx}}: {{coef}}</div>
+            </td>
             <td>{{example.train.mean_squared_error}}</td>
             <td>{{example.train.r2}}</td>
             <td>{{example.test.mean_squared_error}}</td>
@@ -108,12 +110,12 @@
       </p-table>
     </div>
   </div>
-  <img src="assets/images/ml/01_linear_regression/01_coef_r2.png" class="img-center" />
+  <img src="assets/images/ml/01_linear_regression/r2.png" class="img-center" />
 
   <br>
-  <p>Descargar: <a href="assets/downloads/regresion_lineal.zip">regresion_lineal.zip</a></p>
+  <p>Descargar: <a href="assets/downloads/regresion_polinomial.zip">regresion_polinomial.zip</a></p>
   <p>Código fuente:
-    <a href="https://github.com/AlanVieyra333/machine-learning/blob/master/tarea_1/regresion_lineal.py" target="_blank">
-      https://github.com/AlanVieyra333/machine-learning/blob/master/tarea_1/regresion_lineal.py</a></p>
+    <a href="https://github.com/AlanVieyra333/machine-learning/blob/master/tarea_1/regresion_polinomial.py" target="_blank">
+      https://github.com/AlanVieyra333/machine-learning/blob/master/tarea_1/regresion_polinomial.py</a></p>
 
 </section>

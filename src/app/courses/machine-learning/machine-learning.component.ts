@@ -25,9 +25,9 @@ export class MachineLearningComponent implements OnInit {
       "date": "Febrero 4, 2020",
       "redirect": "/cursos/aprendizaje-automatico/regresion-logistica",
     }, {
-      "title": "Regresión Lineal",
+      "title": "Regresión Polinomial",
       "date": "Enero 28, 2020",
-      "redirect": "/cursos/aprendizaje-automatico/regresion-lineal",
+      "redirect": "/cursos/aprendizaje-automatico/regresion-polinomial",
     }
   ];
 

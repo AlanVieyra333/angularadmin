@@ -37,11 +37,11 @@ const routes: Routes = [
       title: 'Regresión Logística'
     },
   }, {
-    path: 'regresion-lineal',
+    path: 'regresion-polinomial',
     loadChildren: () => import('./linear-regression/linear-regression.module')
       .then(m => m.LinearRegressionModule),
     data: {
-      title: 'Regresión Lineal'
+      title: 'Regresión Polinomial'
     },
   },
 ];
