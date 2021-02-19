@@ -9,7 +9,7 @@ const routes: Routes = [
     pathMatch: 'full',
     component: VirtualRealityComponent,
   }, {
-    path: 'fuerza-mra-control',
+    path: 'fuerza-mra-tocar-malla',
     loadChildren: () => import('./force-mra-control/force-mra-control.module')
       .then(m => m.ForceMraControlModule),
     data: {

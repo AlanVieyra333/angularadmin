@@ -11,7 +11,7 @@ export class VirtualRealityComponent implements OnInit {
     {
       "title": "Fuerza MRA - Simulación de tocar la malla",
       "date": "Diciembre 11, 2019",
-      "redirect": "/cursos/realidad-virtual/fuerza-mra-control",
+      "redirect": "/cursos/realidad-virtual/fuerza-mra-tocar-malla",
     }, {
       "title": "Fuerza MRA - Malla 3D",
       "date": "Noviembre 26, 2019",
