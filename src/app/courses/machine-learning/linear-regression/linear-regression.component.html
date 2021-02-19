@@ -1,0 +1,121 @@
+<section>
+  <h1>Regresión Polinomial</h1>
+  <div class="detail">Escrito por: Alan F. Rincón Vieyra &nbsp;&nbsp;&nbsp;&nbsp;
+    <i class="pi pi-calendar"></i>Publicado: 28 Enero 2020
+  </div>
+
+  <p>
+    La regresión lineal o ajuste lineal es un modelo matemático usado para aproximar la relación de
+    dependencia entre una variable dependiente Y y las variables independientes Xi. La
+    aplicación de este método implica un supuesto de linealidad.
+  </p>
+
+  <h2>Modelo</h2>
+  <p>Para un ajuste lineal con una variable independiente, el modelo usado es el siguiente:</p>
+  <div class="equation">
+    <ng-katex [equation]="eq_regLin1"></ng-katex>
+  </div>
+  <p>
+    Se desea ajustar un modelo usando la siguiente función con ruido Gaussiano:
+  </p>
+  <div class="equation">
+    <ng-katex [equation]="eq_modelo1"></ng-katex>
+  </div>
+  <div class="equation">
+    <ng-katex [equation]="eq_modelo2"></ng-katex>
+  </div>
+  <p>
+    Para ajustar el modelo se usaron 10 datos X, Y. Y para probar el modelo se usaron otros 10 datos.
+  </p>
+
+  <h2>Ejemplos</h2>
+
+  <p-tabView>
+    <p-tabPanel [header]="example.title" *ngFor="let example of examples; let i = index" [selected]="i == 0">
+      <img [src]="example.image" class="img-center" />
+      <div class="p-grid">
+        <div class="p-col-6">
+          <p>
+            <i class="pi pi-circle-on" style="font-size: 1.5em; color: rgb(29, 120, 176);"></i>Datos de entrenamiento.
+          </p>
+          <p-table [value]="example.train.dataset">
+            <ng-template pTemplate="header">
+              <tr>
+                <th>X</th>
+                <th>Y</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-dataset>
+              <tr>
+                <td>{{dataset.x}}</td>
+                <td>{{dataset.y}}</td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+
+        <div class="p-col-6">
+          <p>
+            <i class="pi pi-circle-on" style="font-size: 1.5em; color: orange;"></i>Datos de prueba.
+          </p>
+          <p-table [value]="example.test.dataset">
+            <ng-template pTemplate="header">
+              <tr>
+                <th>X</th>
+                <th>Y</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-dataset>
+              <tr>
+                <td>{{dataset.x}}</td>
+                <td>{{dataset.y}}</td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      </div>
+    </p-tabPanel>
+  </p-tabView>
+
+  <br>
+
+  <h3>
+    Tabla de coeficientes, ECM y R2.
+  </h3>
+  <div class="p-grid">
+    <div class="p-col-12">
+      <p-table [value]="examples">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>No. de coeficientes</th>
+            <th>Coeficientes</th>
+            <th>ECM entrenamiento</th>
+            <th><i class="pi pi-circle-on" style="font-size: 1.5em; color: rgb(29, 120, 176);"></i>R2 entrenamiento</th>
+            <th>ECM prueba</th>
+            <th><i class="pi pi-circle-on" style="font-size: 1.5em; color: orange;"></i>R2 prueba</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-example let-i="rowIndex">
+          <tr>
+            <td>{{i + 2}}</td>
+            <td>
+              <div *ngFor="let coef of example.coef;let idx=index">W{{idx}}: {{coef}}</div>
+            </td>
+            <td>{{example.train.mean_squared_error}}</td>
+            <td>{{example.train.r2}}</td>
+            <td>{{example.test.mean_squared_error}}</td>
+            <td>{{example.test.r2}}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+  <img src="assets/images/ml/01_linear_regression/r2.png" class="img-center" />
+
+  <br>
+  <p>Descargar: <a href="assets/downloads/regresion_polinomial.zip">regresion_polinomial.zip</a></p>
+  <p>Código fuente:
+    <a href="https://github.com/AlanVieyra333/machine-learning/blob/master/tarea_1/regresion_polinomial.py" target="_blank">
+      https://github.com/AlanVieyra333/machine-learning/blob/master/tarea_1/regresion_polinomial.py</a></p>
+
+</section>

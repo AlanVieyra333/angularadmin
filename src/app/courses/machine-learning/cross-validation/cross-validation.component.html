@@ -1,0 +1,395 @@
+<section>
+    <h1>Validación Cruzada</h1>
+    <div class="detail">Escrito por: Alan F. Rincón Vieyra &nbsp;&nbsp;&nbsp;&nbsp;
+        <i class="pi pi-calendar"></i>Publicado: 10 Marzo 2020
+    </div>
+
+    <p>
+        La validación cruzada o cross-validation es una técnica utilizada para evaluar los resultados de un análisis
+        estadístico y garantizar que son independientes de la partición entre datos de entrenamiento y prueba. Consiste
+        en repetir y calcular la media aritmética obtenida de las medidas de evaluación sobre diferentes particiones.
+    </p>
+
+    <figure>
+        <img src="assets/images/ml/05_cross_validation/cv.jpg" class="img-center" alt="Validación Cruzada" />
+        <figcaption>Fig.1 - Validación Cruzada.</figcaption>
+    </figure>
+
+    <h2>Ejemplo</h2>
+    <p>Se desea clasificar los datos de la flor Iris, utilizando 4 características y 3 clases.</p>
+
+    <p>Las 4 características utilizadas son las mediciones del <b>largo y ancho de los sépalos</b> y el <b>largo y
+            ancho de los pétalos</b>.<br></p>
+    <p>El algoritmo de entrenamiento utilizado es el de <b>K-NN</b>:</p>
+
+    <p-tabView>
+        <p-tabPanel header="Validación cruzada con 5 etapas" selected="true">
+            <figure>
+                <img src="assets/images/ml/05_cross_validation/example_k_5.png" class="img-center" />
+                <figcaption>Fig.2 - Validación cruzada con 5 etapas para el algoritmo K-NN.</figcaption>
+            </figure>
+
+            <table>
+                <tr>
+                    <th rowspan="2">Valor de <b>K</b></th>
+                    <th id="accuracy" colspan="5">Precisión</th>
+                    <th rowspan="2">Media</th>
+                    <th rowspan="2">Variabilidad</th>
+                </tr>
+                <tr>
+                    <th headers="accuracy">Iteración 1</th>
+                    <th headers="accuracy">Iteración 2</th>
+                    <th headers="accuracy">Iteración 3</th>
+                    <th headers="accuracy">Iteración 4</th>
+                    <th headers="accuracy">Iteración 5</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0.95833333</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>0.95833333</td>
+                    <td>0.95833333</td>
+                    <td><b>0.975</b></td>
+                    <td><b>0.020412</b></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>0.91666667</td>
+                    <td>0.95833333</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>0.95833333</td>
+                    <td><b>0.95</b></td>
+                    <td><b>0.031180</b></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>0.95833333</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>0.95833333</td>
+                    <td>0.95833333</td>
+                    <td><b>0.975</b></td>
+                    <td><b>0.020412</b></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>0.95833333</td>
+                    <td>0.95833333</td>
+                    <td>0.95833333</td>
+                    <td>1.0</td>
+                    <td>0.95833333</td>
+                    <td><b>0.9666</b></td>
+                    <td><b>0.0166</b></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>0.95833333</td>
+                    <td>0.95833333</td>
+                    <td>0.95833333</td>
+                    <td>1.0</td>
+                    <td>0.95833333</td>
+                    <td><b>0.9666</b></td>
+                    <td><b>0.0166</b></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>0.95833333</td>
+                    <td>0.95833333</td>
+                    <td>0.91666667</td>
+                    <td>0.95833333</td>
+                    <td>0.95833333</td>
+                    <td><b>0.95</b></td>
+                    <td><b>0.0166</b></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>0.95833333</td>
+                    <td>0.95833333</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>0.95833333</td>
+                    <td><b>0.958333</b></td>
+                    <td><b>0.026352</b></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>0.95833333</td>
+                    <td>0.95833333</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>0.95833333</td>
+                    <td><b>0.958333</b></td>
+                    <td><b>0.026352</b></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>0.95833333</td>
+                    <td>0.95833333</td>
+                    <td>0.95833333</td>
+                    <td>0.95833333</td>
+                    <td>0.91666667</td>
+                    <td><b>0.95</b></td>
+                    <td><b>0.016666</b></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>0.95833333</td>
+                    <td>0.95833333</td>
+                    <td>0.95833333</td>
+                    <td>0.95833333</td>
+                    <td>0.91666667</td>
+                    <td><b>0.95</b></td>
+                    <td><b>0.016666</b></td>
+                </tr>
+            </table>
+
+            <br>
+            <p>Como resultado de las validaciones anteriores, se tiene que el valor de <b>K</b> con los que se obtuvo la
+                media mas alta y menor variabilidad es el siguiente:</p>
+            <table>
+                <tr>
+                    <th>K</th>
+                    <th>Precision Media</th>
+                    <th>Variabilidad</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>97.5%</td>
+                    <td>2.04%</td>
+                </tr>
+            </table>
+
+            <br>
+            <p>Métricas del clasificador:</p>
+            <table>
+                <tr>
+                    <th>Precisión</th>
+                    <th>Exactitud</th>
+                </tr>
+                <tr>
+                    <td>100%</td>
+                    <td>90%</td>
+                </tr>
+            </table>
+        </p-tabPanel>
+        <p-tabPanel header="Validación cruzada con 10 etapas">
+            <figure>
+                <img src="assets/images/ml/05_cross_validation/example_k_10.png" class="img-center" />
+                <figcaption>Fig.3 - Validación cruzada con 10 etapas para el algoritmo K-NN.</figcaption>
+            </figure>
+
+            <table>
+                <tr>
+                    <th rowspan="2">Valor de <b>K</b></th>
+                    <th id="accuracy" colspan="10">Precisión</th>
+                    <th rowspan="2">Media</th>
+                    <th rowspan="2">Variabilidad</th>
+                </tr>
+                <tr>
+                    <th headers="accuracy">Iteración 1</th>
+                    <th headers="accuracy">Iteración 2</th>
+                    <th headers="accuracy">Iteración 3</th>
+                    <th headers="accuracy">Iteración 4</th>
+                    <th headers="accuracy">Iteración 5</th>
+                    <th headers="accuracy">Iteración 6</th>
+                    <th headers="accuracy">Iteración 7</th>
+                    <th headers="accuracy">Iteración 8</th>
+                    <th headers="accuracy">Iteración 9</th>
+                    <th headers="accuracy">Iteración 10</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td><b>0.975000</b></td>
+                    <td><b>0.038188</b></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>0.83333333</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td><b>0.958333</b></td>
+                    <td><b>0.055902</b></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td><b>0.966667</b></td>
+                    <td><b>0.040825</b></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td><b>0.966667</b></td>
+                    <td><b>0.040825</b></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td><b>0.966667</b></td>
+                    <td><b>0.040825</b></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>0.83333333</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td><b>0.958333</b></td>
+                    <td><b>0.055902</b></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>0.83333333</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td><b>0.958333</b></td>
+                    <td><b>0.055902</b></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>0.83333333</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td><b>0.950000</b></td>
+                    <td><b>0.055277</b></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>0.83333333</td>
+                    <td>1.0</td>
+                    <td><b>0.950000</b></td>
+                    <td><b>0.055277</b></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>0.91666667</td>
+                    <td>0.91666667</td>
+                    <td>1.0</td>
+                    <td>0.83333333</td>
+                    <td>1.0</td>
+                    <td><b>0.950000</b></td>
+                    <td><b>0.055277</b></td>
+                </tr>
+            </table>
+
+            <br>
+            <p>Como resultado de las validaciones anteriores, se tiene que el valor de <b>K</b> con los que se obtuvo la
+                media mas alta y menor variabilidad es el siguiente:</p>
+            <table>
+                <tr>
+                    <th>K</th>
+                    <th>Precision Media</th>
+                    <th>Variabilidad</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>97.5%</td>
+                    <td>3.81%</td>
+                </tr>
+            </table>
+
+            <br>
+            <p>Métricas del clasificador:</p>
+            <table>
+                <tr>
+                    <th>Precisión</th>
+                    <th>Exactitud</th>
+                </tr>
+                <tr>
+                    <td>100%</td>
+                    <td>90%</td>
+                </tr>
+            </table>
+        </p-tabPanel>
+    </p-tabView>
+
+
+    <br>
+
+    <br>
+    <p>Descargar: <a href="assets/downloads/cross_val.zip">cross_val.zip</a></p>
+    <p>Código fuente:
+        <a href="https://github.com/AlanVieyra333/machine-learning/tree/master/tarea_5" target="_blank">
+            https://github.com/AlanVieyra333/machine-learning/tree/master/tarea_5</a></p>
+
+
+</section>

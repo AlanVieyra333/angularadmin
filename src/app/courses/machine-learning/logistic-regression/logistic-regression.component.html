@@ -1,0 +1,189 @@
+<section>
+    <h1>Regresión Logística</h1>
+    <div class="detail">Escrito por: Alan F. Rincón Vieyra &nbsp;&nbsp;&nbsp;&nbsp;
+        <i class="pi pi-calendar"></i>Publicado: 4 Febrero 2020
+    </div>
+
+    <p>
+        La regresión logística se usa para la clasificación de un problema binario (es o no es). Calcula la
+        probabilidad de que las características de entrada (variables independientes) pertenezcan o no a una clase.
+    </p>
+
+    <h2>Modelo</h2>
+    <p>La regresión logística utiliza la función logística (o sigmoide), para calcular la probabilidad de pertenencia:
+    </p>
+    <div class="equation">
+        <ng-katex [equation]="eq_regLog_sigmoide"></ng-katex>
+    </div>
+    <p>
+        Donde <ng-katex [equation]="'y'"></ng-katex> es la combinación lineal de las variables independientes:
+    </p>
+    <div class="equation">
+        <ng-katex [equation]="eq_regLog_convLin"></ng-katex>
+    </div>
+    <p>
+        Para encontrar los valores de <ng-katex [equation]="'\\Beta'"></ng-katex> se utilizan algoritmos iterativos (no
+        existe solución cerrada) que
+        minimicen el error entre la clasificación obtenida por el modelo y la real.
+    </p>
+
+    <h2>Ejemplo</h2>
+    <p>Se desea clasificar un conjunto de datos de la flor Iris, para saber a cual de los dos tipos de especies de Iris
+        pertenecen (Iris setosa e Iris versicolor).</p>
+
+    <p-tabView>
+        <p-tabPanel header="Entrenamiento con sépalos" selected="true">
+            <p>Para el entrenamiento del clasificador se usaron las mediciones del <b>largo y ancho de los sépalos</b>
+                con la siguiente configuración del clasificador:</p>
+            <br>
+            <table>
+                <tr>
+                    <th>LearningRate</th>
+                    <th>Iterations</th>
+                    <th>Regularization</th>
+                    <th>TrainMethod</th>
+                    <th>MiniBatchSize</th>
+                </tr>
+                <tr>
+                    <td>0.003</td>
+                    <td>100</td>
+                    <td>LogisticRegression_REG_L2</td>
+                    <td>LogisticRegression_MINI_BATCH</td>
+                    <td>1</td>
+                </tr>
+            </table>
+
+            <br>
+            <p>Resultado del entrenamiento:</p>
+            <br>
+            <table>
+                <tr>
+                    <th>Thetas</th>
+                    <th>Exactitud</th>
+                    <th>Precisión</th>
+                </tr>
+                <tr>
+                    <td>-0.04229198, 0.12146214, -0.19505508</td>
+                    <td>0.988</td>
+                    <td>1.0</td>
+                </tr>
+            </table>
+
+            <figure>
+                <img src="assets/images/ml/02_logistic_regression/logistic_regression_sepalos.png" class="img-center" />
+                <figcaption>Fig.1 - Separación lineal con medidas de sépalos.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="assets/images/ml/02_logistic_regression/logistic_regression_sepalos_zoom.png"
+                    class="img-center" alt="Sigmoide" />
+                <figcaption>Fig.2 - Sigmoide con Zoom.</figcaption>
+            </figure>
+        </p-tabPanel>
+        <p-tabPanel header="Entrenamiento con pétalos">
+            <p>Para el entrenamiento del clasificador se usaron las mediciones del <b>largo y ancho de los pétalos</b>
+                con la siguiente configuración del clasificador:</p>
+            <br>
+            <table>
+                <tr>
+                    <th>LearningRate</th>
+                    <th>Iterations</th>
+                    <th>Regularization</th>
+                    <th>TrainMethod</th>
+                    <th>MiniBatchSize</th>
+                </tr>
+                <tr>
+                    <td>0.012</td>
+                    <td>100</td>
+                    <td>LogisticRegression_REG_L2</td>
+                    <td>LogisticRegression_MINI_BATCH</td>
+                    <td>1</td>
+                </tr>
+            </table>
+
+            <br>
+            <p>Resultado del entrenamiento:</p>
+            <br>
+            <table>
+                <tr>
+                    <th>Thetas</th>
+                    <th>Exactitud</th>
+                    <th>Precisión</th>
+                </tr>
+                <tr>
+                    <td>-1.1099901, 0.37105098, 0.1584609</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                </tr>
+            </table>
+
+            <figure>
+                <img src="assets/images/ml/02_logistic_regression/logistic_regression_petalos.png" class="img-center" />
+                <figcaption>Fig.3 - Separación lineal con medidas de pétalos.</figcaption>
+            </figure>
+        </p-tabPanel>
+        <p-tabPanel header="Conjunto con separación no lineal">
+            <p>Para el entrenamiento del clasificador se usaron datos arbitrarios y la siguiente configuración del
+                clasificador:</p>
+            <br>
+            <table>
+                <tr>
+                    <th>LearningRate</th>
+                    <th>Iterations</th>
+                    <th>Regularization</th>
+                    <th>TrainMethod</th>
+                    <th>MiniBatchSize</th>
+                </tr>
+                <tr>
+                    <td>0.005</td>
+                    <td>100</td>
+                    <td>LogisticRegression_REG_L2</td>
+                    <td>LogisticRegression_MINI_BATCH</td>
+                    <td>1</td>
+                </tr>
+            </table>
+
+            <br>
+            <p>Resultado del entrenamiento:</p>
+            <br>
+            <table>
+                <tr>
+                    <th>Thetas</th>
+                    <th>Exactitud</th>
+                    <th>Precisión</th>
+                </tr>
+                <tr>
+                    <td>1.0115751, 0.26141468, -0.14617041</td>
+                    <td>0.960</td>
+                    <td>0.955</td>
+                </tr>
+            </table>
+
+            <figure>
+                <img src="assets/images/ml/02_logistic_regression/no_lineal.png" class="img-center" />
+                <figcaption>Fig.4 - Separación no lineal de datos.</figcaption>
+            </figure>
+        </p-tabPanel>
+    </p-tabView>
+
+    <p>Como se puede observar en las gráficas anteriores, el entrenmiento con las medidas de los pétalos produce un
+        resultado mejor en la clasificación debido a que la separación entre las 2 clases es mas pronunciada que con los
+        datos de los sépalos.</p>
+    <p>Para logra que el clasificador tenga mayor <i>exactitud</i> se debe manipular el valor de <i>LearningRate</i>
+        para evitar que la regresión logística converja hacia un mínimo local.</p>
+
+    <p>Si el problema no es linealmente separable, el clasificador calculará las constantes <ng-katex
+            [equation]="'\\beta'"></ng-katex> con las que se obtenga una mayor <i>exactitud</i>.</p>
+
+    <br>
+    <p>Descargar: <a href="assets/downloads/regresion_logistica.zip">regresion_logistica.zip</a></p>
+    <p>Código fuente:
+        <a href="https://github.com/AlanVieyra333/machine-learning/tree/master/tarea_2" target="_blank">
+            https://github.com/AlanVieyra333/machine-learning/tree/master/tarea_2</a></p>
+
+    <br>
+    <h2>Referencias</h2>
+    <a href="https://www.cs.us.es/cursos/rac-2017/temas/tema-03.pdf"
+        target="_blank">https://www.cs.us.es/cursos/rac-2017/temas/tema-03.pdf</a>
+
+</section>

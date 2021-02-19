@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row row-stat">
+
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default panel-table">
+                        <div class="panel-heading panel-heading-no-divider">Tareas
+                            <span class="panel-subtitle">Tareas realizados para el curso de Aprendizaje Automático.</span>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table tasks">
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>Tarea</th>
+                                        <th>Fecha</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let task of tasks, let i = index" (click)="redirect(task.redirect)">
+                                        <td>{{tasks.length - i}}</td>
+                                        <td>{{task.title}}</td>
+                                        <td>{{task.date}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
